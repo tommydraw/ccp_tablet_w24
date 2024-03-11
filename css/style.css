@@ -105,6 +105,7 @@ li a:active {
     }
 
     .item-h2 {
+        color: purple;
         font-size: 2em;
         grid-column: 1 / span 3;
         background-color: #ffcc66;
