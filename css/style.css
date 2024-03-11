@@ -1,0 +1,325 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Yaldevi:wght@400;600&display=swap');
+
+:root {
+    --color-primary-alt: #ddbbff;
+    --color-primary-dark: #C994FF;
+    --color-secondary: #ffcc66;
+    --color-tertiary: #c66;
+    --color-background: #303033;
+    --color-text: #cdcdd0;
+    --color-light: #f5f6fa;
+    --color-dark: #1d1d1f;
+    --color-anchor: #88bbff;
+
+    --font-family: "Source Sans Pro", sans-serif;
+    --font-size-h1: 2.5em;
+    --font-size-h2: 2em;
+    --font-size-h3: 1.8em;
+    --font-size-h4: 1.25em;
+    --font-size-text: 0.8em;
+    --font-family-headers: "Yaldevi", sans-serif;
+    --border-radius: 8px;
+}
+
+.skip {
+    background: white;
+    color: black;
+    height: 30px;
+    left: 50%;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+.skip:focus {
+    transform: translateY(0%);
+}
+
+li a:active {
+    background-color: yellow;
+    color: yellow;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 0.5em;
+    gap: 1em;
+}
+
+.item-h2 {
+    font-size: 2em;
+    grid-column: 1 / span 2;
+}
+
+.item-h3 {
+    text-decoration: underline;
+    font-size: 1.2em;
+}
+
+.photo-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 2em;
+    padding-bottom: 1em;
+}
+
+.photo-column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.photo-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+/* @media screen and (max-width: 800px) {
+    .photo-column {
+        flex: 20%;
+        max-width: 20%;
+    }
+} */
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+/* @media screen and (max-width: 600px) {
+    .photo-column {
+        flex: 50%;
+        max-width: 50%;
+        max-height: 50%;
+    }
+} */
+
+
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules 
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*/
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100em;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    overflow-x: scroll;
+    background-color: var(--color-background);
+    font-family: var(--font-family);
+    font-size: var(--font-size-text);
+    color: var(--color-text);
+}
+
+/* Make images easier to work with 
+img {
+    display: block;
+    max-width: 100%;
+}
+*/
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-headers);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    color: #C994FF;
+}
+
+a {
+    color: var(--color-anchor);
+}
+
+main a:hover,
+main a:focus,
+aside a:not(.link-allstyles):hover,
+aside a:not(.link-allstyles):focus,
+#guidelines a:not(.link-guidelines):hover,
+#guidelines a:not(.link-guidlines):focus,
+.page-footer a:hover,
+.page-footer a:focus {
+    outline: 2px dotted var(--color-light);
+}
+
+header {
+    --logomark-height: 2em;
+    display: grid;
+    min-height: 5em;
+    place-items: left;
+    padding: 5vh 2rem;
+    background-color: var(--color-dark);
+    text-align: left;
+}
+
+header h1 {
+    display: inline-grid;
+    min-height: var(--logomark-height);
+    place-content: center;
+    color: var(--color-light);
+}
+
+header h2 {
+    border-top: 2px solid var(--color-secondary);
+    text-align: center;
+}
+
+header .link-allstyles,
+.link-guidelines {
+    background-color: var(--color-primary-alt);
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--color-primary-dark)), color-stop(50%, var(--color-primary-alt)));
+    background: linear-gradient(to right, var(--color-primary-dark) 50%, var(--color-primary-alt) 50%);
+    background-size: 200% 100%;
+    background-position: bottom right;
+    -webkit-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+    color: var(--color-dark);
+    /* border-radius: 16px; */
+    padding: 0.6rem;
+}
+
+header a.link-github,
+a.link-allstyles,
+a.link-guidelines {
+    text-decoration: none;
+}
+
+header a.link-github:hover,
+header a.link-github:focus,
+a.link-allstyles:hover,
+a.link-allstyles:focus,
+a.link-guidelines:hover,
+a.link-guidelines:focus {
+    background-position: bottom left;
+}
+
+nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0;
+    list-style: none;
+    background-color: var(--color-anchor);
+}
+
+nav ul a {
+    display: inline-grid;
+    padding: 0.2rem;
+    color: var(--color-background);
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #004BAD), color-stop(50%, var(--color-anchor)));
+
+    background: linear-gradient(to top, #004BAD 50%, var(--color-anchor) 50%);
+    background-size: 100% 200%;
+    background-position: top left;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+nav ul a:hover,
+nav ul a:focus {
+    background-position: bottom left;
+    color: var(--color-light);
+}
+
+nav ul li {
+    margin: 0 0.3em;
+}
+
+nav ul li a.current:link,
+a.current:visited {
+    color: var(--color-tertiary);
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+main {
+    padding: 2em;
+}
+
+main:focus {
+    outline: none;
+}
+
+main h2,
+aside h2 {
+    border-left: 3px solid var(--color-secondary);
+    padding-left: 1rem;
+}
+
+
+
+/* Remove all animations and transitions for people that prefer not to see them, provide fallbacks for a couple things */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        -webkit-animation-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+        animation-iteration-count: 1 !important;
+        -webkit-transition-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    header a.link-github:hover,
+    header a.link-github:focus,
+    a.link-allstyles:hover,
+    a.link-allstyles:focus {
+        background-color: var(--color-primary-dark);
+    }
+
+    nav ul a:hover,
+    nav ul a:focus {
+        background-color: #004BAD;
+        color: var(--color-light);
+    }
+
+}
