@@ -44,14 +44,14 @@ li a:active {
 
 .info-grid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     padding: 0.5em;
     gap: 1em;
 }
 
 .item-h2 {
     font-size: 2em;
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 1;
 }
 
 .item-h3 {
@@ -79,20 +79,53 @@ li a:active {
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-/* @media screen and (max-width: 800px) {
-    .photo-column {
-        flex: 20%;
-        max-width: 20%;
+@media screen and (min-width: 667px) {
+    p {
+        animation-duration: 4s;
+        animation-name: pslidein;
     }
-} */
+
+    @keyframes pslidein {
+        from {
+            margin-left: 100%;
+            width: 400%;
+        }
+
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
+
+
+    .info-grid {
+        grid-template-columns: auto auto auto;
+        border-top-style: dashed;
+        border-width: 2px;
+    }
+
+    .item-h2 {
+        font-size: 2em;
+        grid-column: 1 / span 3;
+        background-color: #ddbbff;
+    }
+
+    .item-h3 {
+        padding-top: 0.5em;
+        text-decoration: underline;
+        font-size: 1.2em;
+    }
+
+    .photo-column img {
+        border-radius: 50%;
+    }
+}
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 /* @media screen and (max-width: 600px) {
-    .photo-column {
-        flex: 50%;
-        max-width: 50%;
-        max-height: 50%;
-    }
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
 } */
 
 
@@ -251,7 +284,7 @@ nav ul a {
     display: inline-grid;
     padding: 0.2rem;
     color: var(--color-background);
-    font-size: 1.8em;
+    font-size: 1.3em;
     font-weight: bold;
     text-decoration: none;
 
@@ -277,7 +310,7 @@ nav ul li {
 nav ul li a.current:link,
 a.current:visited {
     color: var(--color-tertiary);
-    font-size: 2em;
+    font-size: 1.8em;
     text-decoration: underline;
 }
 
