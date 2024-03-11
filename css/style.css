@@ -107,7 +107,7 @@ li a:active {
     .item-h2 {
         font-size: 2em;
         grid-column: 1 / span 3;
-        background-color: #ddbbff;
+        background-color: #ffcc66;
     }
 
     .item-h3 {
